@@ -10,7 +10,7 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope',function($scope) {
-        $scope.title = 'Click me to expand';
+        $scope.title = 'Click me to expandddd';
         $scope.text = 'Hi there folks, I am the content';
 
 }])
@@ -21,11 +21,11 @@ angular.module('myApp.view1', ['ngRoute'])
     restrict: 'EA',
     replace: true,
     transclude: true,
-    scope: { title:'=expanderTitle' },
+    scope: { title:'@expanderTitle' },
     template: '<div>' +
                 '<div class="title" ng-click="toggle()">{{title}}</div>' +
                 '<div class="body" ng-show="showMe" ng-transclude></div>' +
-              '</div>',
+              '' + '</div>',
     link: function(scope, element, attrs) {
       scope.showMe = false;
       scope.toggle = function toggle() {
